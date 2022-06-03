@@ -1,0 +1,130 @@
+<div class="container col-sm-8">
+  <form>
+  <div class="col order-1 p-4"></div>
+  <!-- <fieldset disabled>
+    <div class="mb-3">
+      <div class="col">
+        <label for="idLabel">Patient Id</label>
+        <input type="id" class="form-control custom-input disabled-input col" id="idInput" aria-describedby="id" placeholder="Id">
+        <small id="idHelp" class="form-text text-muted col">This is the unique identifier of the patient.</small>
+      </div>
+    </div>
+  </fieldset> -->
+  <div>
+    <div class="container">
+      <div class="row align-items-center form-group">
+        <div class="col">
+          <label for="ageLabel">Age</label>
+          <input type="age" class="form-control custom-input" id="ageInput" aria-describedby="age" placeholder="Age" name="agetag" [(ngModel)]="age" #ctrl="ngModel">
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
+          <label for="genderLabel">Gender</label>
+          <br>
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active custom-button">
+              <input type="radio" name="options" id="option1" autocomplete="off" checked>
+              <button class="clear-button" (click)="setMaleGender()">Male</button>
+            </label>
+            <label class="btn btn-secondary custom-button">
+              <input type="radio" name="options" id="option2" autocomplete="off">
+              <button class="clear-button" (click)="setFemaleGender()">Female</button>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-center form-group custom-margin">
+        <div class="col">
+          <label for="hospLabel">Days spent in hospitalization</label>
+          <input type="hosp" class="form-control custom-input" id="hospInput" aria-describedby="hosp" placeholder="Hospitalization" name="spitaltag" [(ngModel)]="zspital" #ctrl="ngModel">
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
+          <label for="icuLabel">Days spent in ICU</label>
+          <input type="icu" class="form-control custom-input" id="icuInput" aria-describedby="icu" placeholder="ICU" name="icutag" [(ngModel)]="zicu" #ctrl="ngModel">
+        </div>
+      </div>
+      <div class="row align-items-center form-group custom-margin mb-3">
+        <div class="col">
+          <label>Tests run during their stay</label>
+          <input type="tests" class="form-control custom-input" id="testsInput" aria-describedby="tests" placeholder="Tests and analysis" name="testtag" [(ngModel)]="tests" #ctrl="ngModel">
+          <small id="testsHelp" class="form-text text-muted col">Example:UREA - 51 mg/dl) (13 - 43) || GLICEMIE - 255 mg/dl) (70 - 110 ) || ASAT/GOT - 16 U/l) (0 - 31) || ALAT/GPT - 11 U/L) (0 - 34) || Creatinina - 0.93 mg/dl) (0.51 - 0.95) || CK-MB  * - 12 U/L) (0 - 25 ) || LDH - 418 U/L) (0 - 450) || CK - 131 U/L) (0 - 145) || Proteina C reactiva - 123 mg/L) (0 - 10) || Sodiu - 142 mmol/l) (134 - 150) || Potasiu - 3.8 mmol/l) (3.4 - 5.1) || Timp de protrombina - 17.1 sec) (13 - 18) || AP (%) - 98.4 %) (80 - 130 ) || INR - 1.07 ) (0.8 - 1.2 ) || APTT (sec) - 24.0 sec) (20 - 38) || APTT-ratio - 0.84 ) (0.7 - 1.3) || D dimeri  * - 884.3 ng/ml) (0 - 500) || Troponina T - HS * - 40 ng\L) (0 - 14) || NT-proBNP * - 379 pg/ml) (0 - 125) || Leucocite - 8.05 *10³/µL) (4 - 11) || BAS# - 0.03 *10³/µL) (0.00 - 0.13) || BAS% - 0.3 %) (0 - 1) || NEU# - 5.42 *10³/µL) (1.5 - 6.6) || NEU% - 67.4 %) (30 - 75) || EOS# - 0.03 *10³\µL) (0.02 - 0.67) || EOS% - 0.4 %) (0 - 6) || LY# - 1.90 *10³\µL) (1.5 - 3.5) || LY% - 23.6 %) (20 - 40) || MO# - 0.67 *10³\µL) (0.2 - 1) || MO% - 8.3 %) (2 - 10) || Hematii - 3.84 10³*10³\µl) (4 - 5) || Hemoglobina - 11.2 g\dl) (11.5 - 15) || Volum eritrocitar mediu - 88.5 fL) (78 - 100) || Hemoglobina eritrocitara medie - 29.1 pg\cel) (27 - 32) || Conc. medie de hemoglobina\eritrocit - 32.9 g\dl) (32 - 36) || RDW-CV - 15.3 %) (9 - 15) || RDW-SD - 49.5 fL) (38.2 - 49.2) || Hematocrit - 33.9 %) (37 - 47) || Trombocite - 251 *10*µL) (150 - 400) || MPV - 11.0 fL) (9.1 - 12) || PDW - 15.8 fL) (11 - 18) || PCT - 0.276 fL) (0.15 - 0.5) </small>
+        </div>
+      </div>
+      <div class="row align-items-center form-group custom-margin mb-3">
+        <div class="col">
+          <label>Medication received during their stay</label>
+          <input type="medication" class="form-control custom-input" id="medicationInput" aria-describedby="medication" placeholder="Medication received" name="medicationtag" [(ngModel)]="medication" #ctrl="ngModel">
+          <small id="medicationHelp" class="form-text text-muted col">Example: acetilcisteina 200mg || acifol 5 mg || alprazolam lph (r) 0,5 mg || apa pentru preparate injectabile b. braun 500 ml || aspacardin 39 mg/12 mg || betadine 100 mg/ml 1000ml flsolutie || betadine 75 mg/ml s apun chirurgical 1000ml || bisotens (bisoprolol) 10 mg || candesartan atb 16 mg || cathejell cu lidocaina gel uretral steril 12.5 || cefort 1 g || clexane 4000 ui (40 mg)/0,4 ml || clexane 6000 ui (60 mg)/0,6 ml || clorura de potasiu sol perf 7.45%-100 ml || clorura de sodiu 0,9% -500 ml || clorura de sodiu 0,9% pl 500 ml || clorura de sodiu 0.9% 100 ml || dexametazona rompharm 4 mg/ml || doxiciclina 100 mg || fluconazol kabi 200 mg/100 ml || gabapentin aurobindo 300 mg || humulin r 100ui/ml  3ml || hydroxychloroquine sulphate tablets, 200 mg || imuran 50 mg || levodopa/carbidopa/entacapona teva 75 mg/18,75 mg/200 mg || lidocaina infomed 10 mg/ml || linex 1.2 g || lopinavir and ritonavir tablets  200 mg/50mg || noradrenalina 0.2% 8 ml || nutrison multifibre 500 ml || omeprazol  rompharm 20 mg || omeprazol  zentiva 40 mg || pantoprazol sun 40 mg || paracetamol lph 500 mg || piperacillin/tazobactam kabi 4 g/0.5 g || plaquenil 200mg || prednison-richter 5 mg || roactemra (tocilizumab ) 80mg/ 4ml || rosucard 20 mg || solutie hartmann (ringer lactat) 500 ml || solutie ringer pl 500 ml || spironolactona bioeel 25 mg || sterofundin iso ep 500 ml || tertensif s.r. 1.5 mg || thiossen turbo sol perf 600 mg/50 ml || torvacard 20 mg || vigantoletten 1000 || vitamina b1 sol inj 100 mg/2 ml || vitamina b6 sol inj 50 mg/2 ml || vitamina c vim 500 mg || xilina sol inj 20 mg/ml-2 ml </small>
+        </div>
+      </div>
+      <div class="row align-items-center form-group custom-margin">
+        <div class="">
+          <label for="Comorbidity selection">Initial diagnosis</label>
+          <mat-form-field class="example-chip-list" appearance="fill">
+            <mat-label>Choose one comorbity for the initial diagnosis</mat-label>
+            <mat-chip-list #diagchipList aria-label="Comorbidity selection" >
+              <!-- <div *ngIf="this.initialDiagnosis === ''"> -->
+                <!-- *ngFor="let comorb of this.chosenComorbidities" -->
+              <mat-chip (removed)="removeDiagnosis()" *ngIf="this.initialDiagnosis">
+                <div *ngIf="this.initialDiagnosis"> {{this.initialDiagnosis}} </div>
+                <button matChipRemove>
+                  <mat-icon>cancel</mat-icon>
+                </button>
+              </mat-chip>
+              <input
+                placeholder="Initial diagnosis..."
+                #diagnosInput
+                [formControl]="diagnosisCtrl"
+                [matAutocomplete]="diagauto"
+                [matChipInputFor]="diagchipList"
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                (matChipInputTokenEnd)="addDiagnosis($event)">
+            </mat-chip-list>
+            <mat-autocomplete #diagauto="matAutocomplete" (optionSelected)="selectedDiagnosis($event)">
+              <mat-option *ngFor="let comorb of allComorbidities" [value]="comorb">
+                {{comorb}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row align-items-center form-group">
+        <div class="">
+          <label for="Initial Comorbidity selection">List of any relevant conditions and illneses</label>
+          <mat-form-field class="example-chip-list" appearance="fill">
+            <mat-label>Select all comorbidities that apply</mat-label>
+            <mat-chip-list #combchipList aria-label="Initial Comorbidity selection">
+              <mat-chip
+                *ngFor="let comorb of this.chosenComorbidities"
+                (removed)="removeComorbidity(comorb)">
+                {{comorb}}
+                <button matChipRemove>
+                  <mat-icon>cancel</mat-icon>
+                </button>
+              </mat-chip>
+              <input
+                placeholder="New comorbidity..."
+                #comorbInput
+                [formControl]="comorbiditiesCtrl"
+                [matAutocomplete]="combauto"
+                [matChipInputFor]="combchipList"
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                (matChipInputTokenEnd)="addComorbidity($event)">
+            </mat-chip-list>
+            <mat-autocomplete #combauto="matAutocomplete" (optionSelected)="selectedComorbidity($event)">
+              <mat-option *ngFor="let comorb of filteredComorbidities | async" [value]="comorb">
+                {{comorb}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col order-1 p-4"></div>
+  <button type="submit" class="btn btn-primary custom-button" mat-button (click)="submitData()" >Submit</button>
+</form>
+</div>
